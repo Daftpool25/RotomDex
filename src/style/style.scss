@@ -1,0 +1,55 @@
+@import "./cards.scss";
+@import "./fonts.scss";
+@import "./class.scss";
+
+
+$ash:"https://wallpaperaccess.com/full/2737182.jpg";
+$meow:"https://wallpaperaccess.com/full/4416450.jpg";
+$quintaGen:"https://images.wallpapersden.com/image/download/pokemon-hd-cool-art_bWVqbm2UmZqaraWkpJRoZWZnrWZuZm0.jpg";
+$celebi:"https://images6.alphacoders.com/114/1140114.jpg";
+
+
+aside{
+    h1{
+        @include titleText (4em);
+        @media screen and(max-width:600px){
+            display: none;
+        }
+    }
+}
+
+main{
+    background-color: rgb(46, 4, 18);
+}
+
+.homeDashboard{
+    background: rgba(0, 0, 0, 0.404);
+    background-image: url($meow);
+    background-position: center;
+    background-size: contain;
+    height: 70vh;
+    background-blend-mode: darken;
+
+    h1{
+        @include regularText(8em,700, whitesmoke);
+        @media screen and(max-width:600px){
+        font-size: 4em;
+        }
+    }
+    p{
+        @include regularText(3em,300, #FFC107);
+        background-color: rgba(0, 0, 0, 0.555);
+        border-radius: 9px;
+    }
+}
+
+#pokemon{
+    opacity:100;
+    &:hover{
+        filter: saturate(100%);
+        transform:translateY(40px);
+        transform: scale(1.3);
+        transition-duration: 1000ms;
+    }
+}
+

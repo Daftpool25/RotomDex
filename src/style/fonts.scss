@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Alata&family=Nunito:wght@400;700&display=swap');
+
+//FONTS VAR
+
+$alata:'Alata', sans-serif;
+$nunito:'Nunito', sans-serif;
+
+@mixin titleText ($size) {
+    font-size:$size ;
+    font-weight: 400;
+    font-family: $alata;
+}
+
+@mixin regularText($size,$weight, $color) {
+    font-size:$size ;
+    font-weight: $weight;
+    font-family: $nunito;
+    color: $color;
+}

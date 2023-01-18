@@ -1,0 +1,117 @@
+@import "./fonts.scss";
+
+$warning: #FFC107;
+$danger: #DC3545;
+$secondary:#6C757D;
+$dark:#212529;
+$bg: #2E0412;
+$rotomColor: #E84B43;
+
+//! CSS
+
+.invert{
+    filter: invert(100%);
+}
+
+.morebrigness{
+    filter: brightness(100);
+}
+
+.noSaturated{
+    filter: saturate(75%);
+}
+
+.rounded-100{
+    border-radius: 100px;
+}
+
+.bigger{
+        &:hover{
+        transform:translateY(20px);
+        transition-duration: 1000ms;
+    }
+}
+
+.biggerBtn{
+    &:hover{
+    transform:scale(1.3);
+    transition-duration: 1000ms;
+}
+}
+
+.transparentDiv{
+        opacity: 0.6;
+}
+
+.morebrigness2{
+    filter: brightness(3);
+}
+
+.pointer{
+    &:hover{
+        cursor: pointer;
+    }
+}
+
+.shadownHover{
+    &:hover{
+        box-shadow: 3px 3px 7px rgb(250, 250, 253); 
+    }
+}
+
+.shadownHoverDark{
+    &:hover{
+        box-shadow: 3px 3px 7px rgb(36, 4, 78); 
+    }
+}
+
+.rotomMove{
+    @media screen and(max-width:600px){
+        width: 100px;
+    }
+    &:hover{
+        transform:translateY(-300px);
+        opacity: 0.1;;
+        transition-duration: 1000ms;
+    }
+}
+
+
+//!TEXT
+
+.regularTextWhite{
+    @include regularText(2em,400, white);
+}
+
+.littleTextWhite{
+    @include regularText(1em,400, white);
+}
+
+.tittleTextWhite{
+    @include regularText(4em,700, white);
+    @media screen and(max-width:600px){
+        font-size: 2em;
+    }
+}
+
+.nameTextWhite{
+    @include regularText(3em,700, white);
+}
+
+.cardTittle{
+    @include titleText (2.5em)
+}
+
+//backgrounds
+
+
+
+.h-100{
+    height: 100%;
+}
+
+.bg-wine{
+    background-color: $bg;
+}
+
+
