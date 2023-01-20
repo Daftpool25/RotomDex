@@ -13,6 +13,7 @@ import linkedin from "./images/menu/linkedin.svg";
 //Style
 import  "./style/style.scss";
 import Menu from './components/container/menu';
+import toast, { Toaster } from 'react-hot-toast';
 
 
 const ash ="https://wallpaperaccess.com/full/2737182.jpg"
@@ -20,7 +21,6 @@ const meow="https://wallpaperaccess.com/full/4416450.jpg"
 const quintaGen ="https://images.wallpapersden.com/image/download/pokemon-hd-cool-art_bWVqbm2UmZqaraWkpJRoZWZnrWZuZm0.jpg"
 const celebi ="https://images6.alphacoders.com/114/1140114.jpg"
 
-//TODO 404 not found y que pasa si no encuentra un pokemon, scrollbar
 
 function App() {
 
@@ -49,6 +49,8 @@ function App() {
     <div className={!state? 'd-flex flex-row flex-wrap':""}>
         <Menu state={state}/>
         <main className={!state? "col-12 col-md-8 col-xl-6":""}>
+            <Toaster />
+
             <Routes>
               <Route exact path='/' element={<Home state={state}/>}/>
               <Route path='/pokemon/:name' element={<OpenCard/>}/>

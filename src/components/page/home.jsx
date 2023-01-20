@@ -4,6 +4,8 @@ import CardContainer from "../container/cardContainer"
 import Pagination from '../pure/pagination'
 import searchIcon from "../../images/menu/search.png"
 import rotom from "../../images/rotom.png"
+import toast, { Toaster } from 'react-hot-toast';
+
 
 function Home({getTypeList,getFirstData,getSecondData,state}) {
 
@@ -15,13 +17,7 @@ function Home({getTypeList,getFirstData,getSecondData,state}) {
   const [limit, setLimit] = useState(20);
   const [offset, setOffset] = useState(0);
 
-    //TODO ordenar, paginado,  separar en componentes puros lo que se repite
-    //TODO Menú, responsive
-    //todo INDENTAR HACER LOS USEEFFECT CON PROMESAS
-    // TODO keys repetidos, CONSULTAR XQ PASA ESO CON ARRAYS
-    //TODO CARROUSELL
-    //todo CORREGIR ANCHO DE LA TARJETAS
-    //regiones
+
 
   //!PAGINATION
   function nextPage() {
@@ -37,10 +33,10 @@ function Home({getTypeList,getFirstData,getSecondData,state}) {
   function getTypeList(type) {
     fetch(`https://pokeapi.co/api/v2/type/${type}`).
     then(response => response.json()).
-    then(json => {console.log(json.pokemon);
+    then(json => {
       setFirstData(json.pokemon)
     }).
-    catch(err => console.log(err))
+    catch(err => toast.error(err))
   }
 
 
@@ -48,10 +44,9 @@ function Home({getTypeList,getFirstData,getSecondData,state}) {
   function getList(limit,offset){
      fetch(`https://pokeapi.co/api/v2/pokemon/?offset=${offset}&limit=${limit}`).
     then(response => response.json()).
-    then(json => {setFirstData(json.results);
-    console.log(json.results)
+    then(json => {setFirstData(json.results)
     }).
-    catch(err => console.log(err))
+    catch(err => toast.error(err))
   } 
   
 
@@ -67,11 +62,9 @@ function Home({getTypeList,getFirstData,getSecondData,state}) {
         fetch(item.url).then(response => response.json()).
         then((json) => {
           setSecondData(prev => [...prev,json])}).
-        catch(err => console.log(err))
+        catch(err => toast.error(err))
       })
-      /*let ref= SecondData;
-      ref.sort((a,b) => a.id-b.id);
-      setSecondData(ref);*/
+
 
     }
     else if(firstData[0].hasOwnProperty('pokemon'))
@@ -80,7 +73,7 @@ function Home({getTypeList,getFirstData,getSecondData,state}) {
         fetch(item.pokemon.url).then(response => response.json()).
         then((json) => {
           setSecondData(prev => [...prev,json])}).
-        catch(err => console.log(err))
+        catch(err => toast.error(err))
       })
     }
   }
@@ -97,11 +90,10 @@ function Home({getTypeList,getFirstData,getSecondData,state}) {
         await fetch(`https://pokeapi.co/api/v2/pokemon/${lower}`).
         then(response => response.json()).
         then(json => {
-          console.log(json);
           setSecondData([json])
         }).
-        catch(err => console.log(err))
-    }else{ alert("Is empty!")}
+        catch(err => toast.error(err))
+    }else{ toast.error("Is empty!")}
   }
 
 
@@ -114,10 +106,9 @@ function Home({getTypeList,getFirstData,getSecondData,state}) {
       await fetch(`https://pokeapi.co/api/v2/pokemon/${lower}`).
       then(response => response.json()).
       then(json => {
-        console.log(json);
         setSecondData([json])
       }).
-      catch(err => console.log(err))
+      catch(err => toast.error(err))
     
   }
 
@@ -132,8 +123,6 @@ function Home({getTypeList,getFirstData,getSecondData,state}) {
 
   useEffect(() => {
     getList(limit,offset);
-    console.log(firstData);
-    console.log(offset)
 
   }, [offset])
   
@@ -146,6 +135,8 @@ function Home({getTypeList,getFirstData,getSecondData,state}) {
 
   return (
     <div>
+      <Toaster />
+
       <img src={rotom} alt="rotom" className='fixed-bottom rotomMove' />
       <div className='homeDashboard text-center py-5 mb-5 d-flex flex-column justify-content-center'>
         <h1 className={state? 'h1MenuHidden':'h1MenuActive'}>Wellcome!</h1>

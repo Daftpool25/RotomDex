@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import {useParams} from 'react-router-dom';
 import rotom from "../../images/rotomDex.png";
+import toast, { Toaster } from 'react-hot-toast';
+
 
 import weight from "../../images/weight.png";
 import height from "../../images/height.png";
@@ -51,10 +53,9 @@ function OpenCard() {
     await fetch(`https://pokeapi.co/api/v2/pokemon/${name}`).
     then(response => response.json()).
     then(json => {
-      console.log(json);
       setPokemonDetails(json)
     }).
-    catch(err => console.log(err))
+    catch(err => toast.error(err))
   }
 
   useEffect(() => {
@@ -160,6 +161,8 @@ function OpenCard() {
   return (
 
     <div className="bg-info d-flex flex-column p-0 py-5 p-sm-5">
+              <Toaster />
+
         <div className="rounded-5 bg-warning p-3">
           {pokemonDetails===false?
           <div className="spinner-border" style={spinnerStyle} role="status">
