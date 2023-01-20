@@ -5,7 +5,7 @@ import Pagination from '../pure/pagination'
 import searchIcon from "../../images/menu/search.png"
 import rotom from "../../images/rotom.png"
 
-function Home({getTypeList,getFirstData,getSecondData}) {
+function Home({getTypeList,getFirstData,getSecondData,state}) {
 
   //HOOKS
   const [firstData, setFirstData] = useState([])
@@ -148,16 +148,16 @@ function Home({getTypeList,getFirstData,getSecondData}) {
     <div>
       <img src={rotom} alt="rotom" className='fixed-bottom rotomMove' />
       <div className='homeDashboard text-center py-5 mb-5 d-flex flex-column justify-content-center'>
-        <h1 onClick={() => console.log(SecondData)}>Wellcome!</h1>
+        <h1 className={state? 'h1MenuHidden':'h1MenuActive'}>Wellcome!</h1>
         <p>RotomDex say hi! what you need?</p>
         <form onSubmit={getSinglePokemon}  className="d-flex justify-content-center align-items-center ">
           <div className="w-50 position-relative">
-          <input value={search.get('pokemon')} onChange={e => setSearch({pokemon:e.target.value})} type="text" className="form-control w-100 p-3 fs-3 rounded" placeholder='Search a Pokemon' ></input>
+          <input value={search.get('pokemon')} onChange={e => setSearch({pokemon:e.target.value})} type="text" className="form-control w-100 col-12 p-3 fs-3 rounded" placeholder='Search a Pokemon' ></input>
           <img src={searchIcon} alt="search" className='position-absolute top-50 end-0 translate-middle-y px-2 pointer' onClick={getSinglePokemonURL}/>
           </div>
         </form>
       </div>
-      <CardContainer getType={getTypeList} pokemonList={SecondData}/>
+      <CardContainer getType={getTypeList} state={state} pokemonList={SecondData}/>
 
       <Pagination offset={offset} nextPage={nextPage} previousPage={previousPage}/>
 

@@ -7,8 +7,8 @@ import email from "../../images/menu/mail.png";
 
 function Footer() {
   return (
-    <div className='bg-danger d-flex flex-row p-5'>
-        <div className="col-6">
+    <div className='bg-danger d-flex flex-row flex-wrap flex-md-nowrap p-5'>
+        <div className="col-12 col-md-6 ">
             <div>
               <p className="nameTextWhite text-warning">Pokedex use:</p>
               <p className="regularTextWhite px-3">RESTful API PokeAPI </p>
@@ -16,7 +16,7 @@ function Footer() {
             </div>
         </div>
 
-        <div className="col-6 d-flex flex-column justify-content-center align-items-center text-center gap-2 rounded-5 bg-wine p-4">
+        <div className="col-12 col-md-6 d-flex flex-column justify-content-center align-items-center text-center gap-2 rounded-5 bg-wine p-4">
                 <img src={pokeball} className="morebrigness" width="80px" alt='logo'/>
                 <p className="regularTextWhite text-warning">App made by Christopher Acosta </p>
                 <div className="d-flex flex-row justify-content-around align-items-center gap-3 flex-wrap">

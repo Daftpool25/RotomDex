@@ -23,17 +23,17 @@ import WaterIC from "../../images/badges/WaterIC.png";
 
 //TODO tipo, region, y nombre, en el rotom dex cadena evolutiva y formas alternas
 
-function CardContainer({getType, pokemonList}) {
+function CardContainer({getType, pokemonList,state}) {
 
   const spinnerStyle={
     width: "10rem", height: "10rem"
   }
 
   return (
-    <div className='d-flex flex-column m-5'>
+    <div className='d-flex flex-column align-items-center justify-content-center m-5'>
       <div className="row  w-100 align-items-center text-center my-5">
-        <h1 className="col-lg-2 col-sm-12 col-sx-12 tittleTextWhite rounded">Types:</h1>
-        <div className="col-lg-10 col-sm-12 col-sx-12 d-flex flex-row align-intems-center justify-content-center gap-3 flex-wrap">
+        <h1 className={state? "col-lg-2 col-sm-12 col-sx-12 tittleTextWhite rounded":"col-12 tittleTextWhite pb-5"}>Types:</h1>
+        <div className={state? "col-lg-10 col-sm-12 col-sx-12 d-flex flex-row align-items-center justify-content-center  gap-3 flex-wrap":"col-12 d-flex flex-row align-items-center justify-content-center  gap-3 flex-wrap"}>
           <img  className="biggerBtn rounded p-1 bg-danger" onClick={() => getType(7)} src={BugIC} alt="badge" />
           <img className="biggerBtn rounded p-1 bg-danger" onClick={() => getType(17)} src={DarkIC} alt="badge" />
           <img className="biggerBtn rounded p-1 bg-danger" onClick={() => getType(16)} src={DragonIC} alt="badge" />

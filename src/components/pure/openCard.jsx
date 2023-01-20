@@ -159,15 +159,15 @@ function OpenCard() {
 
   return (
 
-    <div className="bg-info d-flex flex-column p-5">
+    <div className="bg-info d-flex flex-column p-0 py-5 p-sm-5">
         <div className="rounded-5 bg-warning p-3">
           {pokemonDetails===false?
           <div className="spinner-border" style={spinnerStyle} role="status">
              <span className="visually-hidden">Loading...</span>
           </div>  
           :
-          <div className="rotomDexContainer d-flex flex-column align-items-center rounded-5 bg-danger p-5">
-            <img className='col-lg-7 col-sm-4  col-md-7' src={rotom} alt="rotom" />
+          <div className="rotomDexContainer d-flex flex-column align-items-center rounded-5 bg-danger p-5 ">
+            <img className='col-12 col-lg-7 col-sm-4  col-md-7' src={rotom} alt="rotom" />
           <div className='bg-white rounded-5 mx-5 mt-5 h-100 w-100 ' style={gradient}>
               
 
@@ -175,14 +175,14 @@ function OpenCard() {
                   <h1 className='col-12 tittleTextWhite text-white bg-dark bg-opacity-75'>{pokemonDetails.name.toUpperCase()}</h1>
                   
 
-                  <div className="d-flex flex-row flex-wrap">
-                      <div className="col-md-6 col-lg-6 col-sm-12">
-                          <img src={pokemonDetails.sprites.other['official-artwork'].front_default} className="my-3 bigger" alt="poke" width="200px"/>
+                  <div className="d-flex flex-row flex-wrap text-center align-items-center justify-content-center">
+                      <div className="col-md-6 col-lg-6 col-sm-12 ">
+                          <img src={pokemonDetails.sprites.other['official-artwork'].front_default} className="my-3 biggerBtn" alt="poke" width="200px"/>
                           
                           <p className='regularTextWhite text-dark'>Ability: {pokemonDetails.abilities[0].ability.name}</p>
                           
 
-                          <div className="d-flex flex-row align-items-center justify-content-center my-2 wrap">
+                          <div className="d-flex flex-row align-items-center justify-content-center my-2 flex-wrap flex-sm-nowrap">
                             <img className="bigger p-1 bg-danger"  src={badge1} alt="badge1" />
                              {type2!=="nah" && <img  className="bigger p-1 bg-danger" src={badge2} alt="badge2" />}
                           </div>
@@ -195,37 +195,37 @@ function OpenCard() {
 
                             <div className='d-flex flex-column rounded bg-dark bg-opacity-75 py-3 gap-1'>
                                   <div className='d-flex flex-row flex-wrap align-items-center mx-2'>
-                                  <span className="littleTextWhite fs-4 fw-bold col-sm-12">HP: {pokemonDetails.stats[0].base_stat}</span>
-                                  <progress value={pokemonDetails.stats[0].base_stat} max="200" className="col-sm-12"/>
+                                  <span className="littleTextWhite fs-4 fw-bold col-12">HP: {pokemonDetails.stats[0].base_stat}     </span>
+                                  <progress value={pokemonDetails.stats[0].base_stat} max="200" className="col-12"/>
                                   </div>
 
                                   <div className='d-flex flex-row align-items-center flex-wrap mx-2'>
-                                  <span className="littleTextWhite fs-4 fw-bold col-sm-12">ATTACK: {pokemonDetails.stats[1].base_stat}</span>
-                                  <progress value={pokemonDetails.stats[1].base_stat} max="200" className="col-sm-12"/>
-                                  </div>
-
-
-                                  <div className='d-flex flex-row align-items-center flex-wrap mx-2'>
-                                  <span className="littleTextWhite fs-4 fw-bold col-sm-12">SPECIAL ATTACK: {pokemonDetails.stats[2].base_stat}</span>
-                                  <progress value={pokemonDetails.stats[2].base_stat} max="200" className="col-sm-12"/>
+                                  <span className="littleTextWhite fs-4 fw-bold col-12">ATTACK: {pokemonDetails.stats[1].base_stat}</span>
+                                  <progress value={pokemonDetails.stats[1].base_stat} max="200" className="col-12"/>
                                   </div>
 
 
                                   <div className='d-flex flex-row align-items-center flex-wrap mx-2'>
-                                  <span className="littleTextWhite fs-4 fw-bold col-sm-12">DEFENSE: {pokemonDetails.stats[3].base_stat}</span>
-                                  <progress value={pokemonDetails.stats[3].base_stat} max="200" className="col-sm-12"/>
+                                  <span className="littleTextWhite fs-4 fw-bold col-12">SPECIAL ATTACK: {pokemonDetails.stats[2].base_stat}</span>
+                                  <progress value={pokemonDetails.stats[2].base_stat} max="200" className="col-12"/>
                                   </div>
 
 
                                   <div className='d-flex flex-row align-items-center flex-wrap mx-2'>
-                                  <span className="littleTextWhite fs-4 fw-bold col-sm-12">SPECIAL DEFENSE: {pokemonDetails.stats[4].base_stat} </span>
-                                  <progress value={pokemonDetails.stats[4].base_stat} max="200" className="col-sm-12"/>
+                                  <span className="littleTextWhite fs-4 fw-bold col-12">DEFENSE: {pokemonDetails.stats[3].base_stat}</span>
+                                  <progress value={pokemonDetails.stats[3].base_stat} max="200" className="col-12"/>
                                   </div>
 
 
                                   <div className='d-flex flex-row align-items-center flex-wrap mx-2'>
-                                  <span className="littleTextWhite fs-4 fw-bold col-sm-12">SPEED: {pokemonDetails.stats[5].base_stat}</span>
-                                  <progress value={pokemonDetails.stats[5].base_stat} max="200" className="col-sm-12"/>
+                                  <span className="littleTextWhite fs-4 fw-bold col-12">SPECIAL DEFENSE: {pokemonDetails.stats[4].base_stat} </span>
+                                  <progress value={pokemonDetails.stats[4].base_stat} max="200" className="col-12"/>
+                                  </div>
+
+
+                                  <div className='d-flex flex-row align-items-center flex-wrap mx-2'>
+                                  <span className="littleTextWhite fs-4 fw-bold col-12">SPEED: {pokemonDetails.stats[5].base_stat}</span>
+                                  <progress value={pokemonDetails.stats[5].base_stat} max="200" className="col-12"/>
                                   </div>
 
                              </div>

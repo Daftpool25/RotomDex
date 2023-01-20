@@ -159,7 +159,7 @@ function Card({name, img, type1, type2, weight, height, ID}) {
 
   return (
    <div onClick={() => goTo(name)} className=" pokemonCard  my-5 mx-3 rounded-5 bg-warning pointer shadownHover">
-        <div className="text-center w-30 m-2 rounded-5 overflow-hidden" style={bgColor}>
+        <div className="text-center m-2 rounded-5 overflow-hidden" style={bgColor} id="pokeCard">
 
 
             <div className="d-flex flex-row align-items-center justify-content-around py-3 px-2 mb-3 bg-danger "style={bgStyle} >
@@ -168,7 +168,7 @@ function Card({name, img, type1, type2, weight, height, ID}) {
 
             <div className="mt-3 pt-5  noSaturated" style={divFront}>
                 <h1 className='nameTextWhite bg-dark bg-opacity-50 rounded-2 py-2 mb-5'>{name.toUpperCase()}</h1>
-                <img  src={img} width="460px" height="460px" alt="pokemon" id='pokemon'/>
+                <img  src={img} alt="pokemon" id='pokemon'/>
                 
                 <div className="d-flex flex-row align-items-center justify-content-center my-2 wrap">
                         <img className="bigger p-1 bg-danger"  src={badge1} alt="badge1" />

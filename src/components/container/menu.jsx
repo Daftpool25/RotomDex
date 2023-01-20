@@ -19,19 +19,21 @@ function Menu({state}) {
     if(state===true){return(<div hidden></div>)}
     else{
       return (
-        <div className={"text-center bg-danger col-sm-6 col-xs-12 py-5"} id='menu'> 
-            <h1 className="nameTextWhite fw-light bg-dark bg-opacity-50 py-3 mb-5 ">Select a Region:</h1>
-            <div className="d-flex flex-row justify-content-center align-items-center flex-wrap p-3 bg-dark" style={bgStyle}>
-                <RegionCard img={kanto} name="Kanto"/>
-                <RegionCard img={johto} name="Johto"/>
-                <RegionCard img={hoenn} name="Hoenn"/>
-                <RegionCard img={sinnoh} name="Sinnoh"/>
-                <RegionCard img={unova} name="Unova"/>
-                <RegionCard img={kalos} name="Kalos"/>
-                <RegionCard img={alola} name="Alola"/>
-                <RegionCard img={galar} name="Galar"/>
+        <div className={" text-center bg-danger col-xl-6 col-md-4 col-12 pt-5 "} id='menu'> 
+            <div className='position-md-fixed col-12' >
+                <h1 className="nameTextWhite fw-light bg-dark bg-opacity-50 py-3 mb-5 ">Select a Region:</h1>
+                <div className="d-flex flex-row justify-content-center align-items-center flex-wrap px-1 py-5 bg-dark" style={bgStyle}>
+                    <RegionCard img={kanto} name="Kanto"/>
+                    <RegionCard img={johto} name="Johto"/>
+                    <RegionCard img={hoenn} name="Hoenn"/>
+                    <RegionCard img={sinnoh} name="Sinnoh"/>
+                    <RegionCard img={unova} name="Unova"/>
+                    <RegionCard img={kalos} name="Kalos"/>
+                    <RegionCard img={alola} name="Alola"/>
+                    <RegionCard img={galar} name="Galar"/>
+                </div>
+                <p className='littleTextWhite pt-3'>It´s a Dedication to World Champion Ash Ketchup.</p>
             </div>
-            <p className='littleTextWhite pt-3'>It´s a Dedication to World Champion Ash Ketchup,</p>
         </div>
       )
     }

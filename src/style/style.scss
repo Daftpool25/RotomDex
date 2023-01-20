@@ -30,7 +30,13 @@ main{
     height: 70vh;
     background-blend-mode: darken;
 
-    h1{
+    .h1MenuActive{
+        @include regularText(3em,700, whitesmoke);
+        @media screen and(max-width:600px){
+        font-size: 2em;
+        }
+    }
+    .h1MenuHidden{
         @include regularText(8em,700, whitesmoke);
         @media screen and(max-width:600px){
         font-size: 4em;
@@ -45,6 +51,10 @@ main{
 
 #pokemon{
     opacity:100;
+    width: 460px;
+    @media screen and(max-width:600px){
+        width: 260px;
+    }
     &:hover{
         filter: saturate(100%);
         transform:translateY(40px);
@@ -53,3 +63,8 @@ main{
     }
 }
 
+#pokeCard{
+    @media screen and(max-width:600px){
+        width: 340px;
+    }
+}

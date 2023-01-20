@@ -48,9 +48,9 @@ function App() {
 
     <div className={!state? 'd-flex flex-row flex-wrap':""}>
         <Menu state={state}/>
-        <main className={!state? "col-xs-12 col-sm-6":""}>
+        <main className={!state? "col-12 col-md-8 col-xl-6":""}>
             <Routes>
-              <Route exact path='/' element={<Home/>}/>
+              <Route exact path='/' element={<Home state={state}/>}/>
               <Route path='/pokemon/:name' element={<OpenCard/>}/>
               <Route exact path='/pokemon' element={<Home/>}/>
             </Routes>
